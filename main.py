@@ -89,5 +89,5 @@ if __name__ == "__main__":
                                 num_rounds=10, 
                                 num_epochs_local=3, 
                                 clip_norm=None, 
-                                privacy_budget=0.01)
+                                privacy_budget=None)
 

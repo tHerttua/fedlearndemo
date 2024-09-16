@@ -86,6 +86,7 @@ python -m pip install -r requirements.txt
 Run the main.py script using a debugger or just cmd:
 python main.py
 
+The main hyperparameters can be changed in main.py 
 
 # Security and risk discussion
 

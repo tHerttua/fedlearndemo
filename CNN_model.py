@@ -1,5 +1,6 @@
 import tensorflow as tf
 from tensorflow.keras.layers import Input, Conv2D, MaxPooling2D, Flatten, Dense
+from tensorflow.keras.regularizers import l2
 
 
 def create_model(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy']):
