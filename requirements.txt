@@ -1,0 +1,5 @@
+tensorflow
+matplotlib
+numpy
+pandas
+PyQt5==5.15.10
