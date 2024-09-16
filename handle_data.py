@@ -17,14 +17,14 @@ def load_and_preprocess_data():
 
 def partition_data(x_train, y_train, num_clients=5, num_shards=10, focus_ratio=0.6):
     """
-    Partition the dataset in a non-IID fashion where each client will gravitate towards two
+    Partition the dataset in a non-IID fashion where each client will gravitate towards
     specific classes, but will also have small amounts of data from all classes.
     
     Uses Dirichlet distribution to create a non-uniform probability distribution over the non-focus
     classes.
 
     num_shards: Number of data shards to divide the dataset into.
-    focus_ratio: The proportion of data that should focus on two specific classes for each client.
+    focus_ratio: The proportion of data that should focus on specific classes for each client.
 
     Returns a dictionary where each key is a client ID and each value is a tuple (x, y) 
     representing the client's data and corresponding labels.
@@ -45,6 +45,9 @@ def partition_data(x_train, y_train, num_clients=5, num_shards=10, focus_ratio=0
 
     # List of class labels to ensure each client has some data from every class
     unique_classes = np.unique(y_train)
+
+    # Create a random permutation of shard indices to distribute shards evenly
+    shard_indices = np.random.permutation(num_shards)
 
     for i in range(num_clients):
         # Select two classes at random which will be the focused ones
