@@ -80,8 +80,6 @@ def simulate_federated_learning(x_train, y_train, x_test, y_test, num_clients=5,
     plt.show()
 
 
-
-
 if __name__ == "__main__": 
 
     (x_train, y_train), (x_test, y_test) = load_and_preprocess_data()
@@ -92,7 +90,4 @@ if __name__ == "__main__":
                                 num_epochs_local=3, 
                                 clip_norm=None, 
                                 privacy_budget=0.01)
-
-
-
 
