@@ -20,12 +20,9 @@ def partition_data(x_train, y_train, num_clients=5, num_shards=10, focus_ratio=0
     Partition the dataset in a non-IID fashion where each client will gravitate towards two
     specific classes, but will also have small amounts of data from all classes.
     
-    The idea is to simulate a scenario, where there are n amount of clients that deal with similar data,
-    but each of them are interested in different, albeit overlapping, classification targets.
-    
     Uses Dirichlet distribution to create a non-uniform probability distribution over the non-focus
     classes.
-    
+
     num_shards: Number of data shards to divide the dataset into.
     focus_ratio: The proportion of data that should focus on two specific classes for each client.
 

@@ -1,5 +1,5 @@
 tensorflow
-tensorflow-federated
 matplotlib
 numpy
 pandas
+PyQt5==5.15.10
