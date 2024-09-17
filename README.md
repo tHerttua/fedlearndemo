@@ -11,8 +11,10 @@ To simulate the behaviour and federated learning (FL) principles, the approach b
 
 The demonstration script gathers loss and accuracy over the communication rounds and displays how the clients and the global model performance evolves over the rounds.
 
+The main focus was to create simple simulation with limited time, which turned out great. However, some details and additional things as well as hyperparameter search was left out for this version.
 As this is just a demonstration, the logging is crumbled within the script that acts as the entrypoint (main.py) instead of proper logging module, and no extensive testing is done aside from a few integration tests.
 To keep this script hardware agnostic and simple enough, the federated learning is done in a loop with unique clients instead of creating, for example, docker containerization, or another more sophisticated way of simulation.
+The result it provides is nondeterministic due to how I implemented the non-IID data, but without further parameter searching the resulting global model test accuracy is roughly 60% with these hyperparameters.
 
 test folder includes two different integration tests to verify the agents indeed are unique, and another to understand the distribution of data between the clients.
 
